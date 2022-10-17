@@ -17,6 +17,7 @@ Alias: $SD_Practitioner_Base = https://fhir-ig.sil-th.org/mophpc1/StructureDefin
 Alias: $SD_PractitionerRole_Base = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/mophpc-practitionerrole-base
 Alias: $SD_Procedure_Base = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/mophpc-procedure-base
 Alias: $SD_RelatedPerson_Base = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/mophpc-relatedperson-base
+Alias: $SD_Specimen_Base = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/mophpc-specimen-base
 
 // Profiles on Extensions
 Alias: $SD_Patient_EX_Nationality = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/mophpc-patient-extension-nationality

@@ -2,7 +2,7 @@ Profile: MophPcPatientBase
 Parent: Patient
 Id: mophpc-patient-base
 Title: "MoPH-PC Patient"
-Description: "ข้อมูลทั่วไปของประชาชนในเขตรับผิดชอบ และผู้ที่มาใช้บริการ"
+Description: "ผู้ป่วย/ผู้รับบริการสุขภาพ"
 * ^url = $SD_Patient_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"

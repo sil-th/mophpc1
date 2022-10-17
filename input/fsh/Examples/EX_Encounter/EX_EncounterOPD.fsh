@@ -8,18 +8,10 @@ Usage: #example
 * extension[0]
   * url = $EX_TH_EncounterServiceTypeTH 
   * valueCodeableConcept = $CS_eClaim_ServiceTypeTH#0 "Refer ในบัญชีเครือข่ายเดียวกัน"
-* identifier[0]
-  * use = #secondary
-  * type
-    // * coding[0] = $CS_HL7_IdentifierType#VN "Visit number"
-    * coding[0] = $CS_TH_IdentifierType#localVn "เลข Visit Number (VN) ของหน่วยบริการ"
-  * system = $ID_LO_VN
-  * value = "65-XXXXX"
 * status = #finished
 * class = $CS_HL7_EncounterClass#AMB "ambulatory"
 * priority
   * coding[hl7] = $CS_HL7_Priority#R "routine"
-  * coding[43plus] = $CS_43Plus_ServicePriority#1 "ปกติ"
   * text = "ปกติ"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
   * extension
@@ -84,7 +76,6 @@ Usage: #example
 * class = $CS_HL7_EncounterClass#AMB "ambulatory"
 * priority
   * coding[hl7] = $CS_HL7_Priority#R "routine"
-  * coding[43plus] = $CS_43Plus_ServicePriority#1 "ปกติ"
   * text = "ปกติ"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
   * extension

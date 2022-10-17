@@ -2,7 +2,7 @@ Profile: MophPcMedicationStatementBase
 Parent: MedicationStatement
 Id: mophpc-medicationstatement-base
 Title: "MoPH-PC MedicationStatement"
-Description: "ข้อมูลประวัติการใช้ยาผู้ป่วย"
+Description: "การใช้ยาของผู้รับบริการ"
 * ^url = $SD_MedicationStatement_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
@@ -20,28 +20,19 @@ Description: "ข้อมูลประวัติการใช้ยาผ
 * category.coding ^slicing.discriminator[=].path = "system"
 * category.coding ^slicing.rules = #open
 * category.coding contains
-    thcc 1..1 MS
-* category.coding[thcc] from $VS_eClaim_MedicationCategory (extensible)
-* category.coding[thcc].system 1..
-* category.coding[thcc].code 1..
+    eclaim 1..1 MS
+* category.coding[eclaim] from $VS_eClaim_MedicationCategory (extensible)
+* category.coding[eclaim].system 1..
+* category.coding[eclaim].code 1..
 * medication[x] 1.. MS
-* medication[x] ^slicing.discriminator.type = #type
-* medication[x] ^slicing.discriminator.path = "$this"
-* medication[x] ^slicing.rules = #open
-* medicationCodeableConcept 0..1 MS
-* medicationCodeableConcept only CodeableConcept
+* medication[x] only CodeableConcept
+* medicationCodeableConcept MS
 * medicationCodeableConcept.coding ^slicing.discriminator.type = #value
 * medicationCodeableConcept.coding ^slicing.discriminator.path = "system"
 * medicationCodeableConcept.coding ^slicing.rules = #open
 * medicationCodeableConcept.coding contains
-    24-digit 0..1 MS and
     tmt 0..1 MS and
     local 0..1 MS
-* medicationCodeableConcept.coding[24-digit] ^short = "รหัสยามาตรฐาน 24 หลัก"
-* medicationCodeableConcept.coding[24-digit] from $VS_24Drug (extensible)
-* medicationCodeableConcept.coding[24-digit].system 1..
-* medicationCodeableConcept.coding[24-digit].system = $CS_24Drug (exactly)
-* medicationCodeableConcept.coding[24-digit].code 1..
 * medicationCodeableConcept.coding[tmt] ^short = "รหัสยามาตรฐาน TMT"
 * medicationCodeableConcept.coding[tmt] from $VS_TMT (extensible)
 * medicationCodeableConcept.coding[tmt].system 1..
@@ -51,8 +42,6 @@ Description: "ข้อมูลประวัติการใช้ยาผ
 * medicationCodeableConcept.coding[local].system 1..
 * medicationCodeableConcept.coding[local].system = $CS_TH_LocalDrugCode (exactly)
 * medicationCodeableConcept.coding[local].code 1..
-* medicationReference 0..1 MS
-* medicationReference only Reference($SD_Medication_Base)
 * subject only Reference($SD_Patient_Base)
 * subject MS
 * effective[x] MS

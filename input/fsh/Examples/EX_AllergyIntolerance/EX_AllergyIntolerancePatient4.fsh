@@ -20,13 +20,11 @@ Usage: #example
   * valueReference = Reference(Organization/organization-main)
 * clinicalStatus
   * coding[0] = $CS_HL7_AlleryActive#active "Active"
-  * coding[+] = $CS_Std15_AllergyVerify#1 "แพ้"
 * verificationStatus
   * coding[0] = $CS_HL7_AllergyVerify#confirmed "Confirmed"
 * category = #medication
 * code
   * coding[0] = $CS_TMT#227162 "AAMOX 500 (ห้างขายยาตราเจ็ดดาว) (amoxicillin 500 mg) film-coated tablet, 1 tablet"
-  * coding[+] = $CS_24Drug#100176000004493120381620 "AMOXICILLIN 500 MG TABLET, ORAL"
   * coding[+] = $CS_TH_LocalDrugCode#1233 "Local code amoxycillin 500 mg"
   * text = "Amoxycillin 500 mg"
 * patient = Reference(Patient/patient-patient4)

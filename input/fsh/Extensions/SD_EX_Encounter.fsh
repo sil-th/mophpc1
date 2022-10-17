@@ -152,28 +152,6 @@ Description: "คำแนะนำหลังการเข้ารับบ
 
 
 
-Extension: EX_TH_EncounterFpCaseType
-Id: ex-encounter-fp-case-type
-Title: "Encounter: Family Planning Case Type"
-Description: "รหัสประเภทการวางแผนครอบครัว"
-* ^url = $EX_TH_EncounterFpCaseType
-* ^version = "4.3.0"
-* ^status = #draft
-* ^experimental = false
-* ^date = "2022-08-23T07:06:13+11:00"
-* ^publisher = "SIL-TH"
-* ^context.type = #element
-* ^context.expression = "Encounter"
-* . 0..*
-* . ^short = "รหัสประเภทการวางแผนครอบครัว"
-* . ^definition = "รหัสประเภทการวางแผนครอบครัว"
-* url = $EX_TH_EncounterFpCaseType (exactly)
-* value[x] 1..
-* value[x] only CodeableConcept
-* value[x] from $VS_PCU_FpCaseType (extensible)
-
-
-
 
 
 Extension: EX_TH_EncounterProviderType
@@ -196,26 +174,5 @@ Description: "รหัสประเภทสถานพยาบาลที
 * value[x] only CodeableConcept
 * value[x] from $VS_eClaim_ProviderType (extensible)
 
-
-
-
-Extension: EX_TH_EncounterReferOutID
-Id: ex-encounter-refer-out-id
-Title: "Encounter: Refer Out ID"
-Description: "เลขที่ใบส่งตัว"
-* ^url = $EX_TH_EncounterReferOutID
-* ^version = "4.3.0"
-* ^status = #draft
-* ^experimental = false
-* ^date = "2022-08-23T07:06:13+11:00"
-* ^publisher = "SIL-TH"
-* ^context.type = #element
-* ^context.expression = "Encounter.hospitalization.destination"
-* . 0..*
-* . ^short = "เลขที่ใบส่งตัว"
-* . ^definition = "เลขที่ใบส่งตัว"
-* url = $EX_TH_EncounterReferOutID (exactly)
-* value[x] 1..
-* value[x] only Reference(ServiceRequest)
 
 

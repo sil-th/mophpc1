@@ -2,7 +2,7 @@ Profile: MophPcEncounterBase
 Parent: Encounter
 Id: mophpc-encounter-base
 Title: "MoPH-PC Encounter"
-Description: "การรับบริการโดยทั่วไป"
+Description: "การรับบริการสุขภาพ"
 * ^url = $SD_Encounter_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
@@ -10,33 +10,8 @@ Description: "การรับบริการโดยทั่วไป"
 * extension contains
     $EX_TH_EncounterPatientLocationType named patientLocationType 0..1 MS and
     $EX_TH_EncounterServiceHour named serviceHour 0..1 MS and
-    $EX_TH_EncounterServiceTypeTH named serviceTypeTH 0..1 MS and
-    $EX_TH_EncounterFpCaseType named familyPlanningType 0..1 MS
+    $EX_TH_EncounterServiceTypeTH named serviceTypeTH 0..1 MS
 * identifier MS
-* identifier ^slicing.discriminator[0].type = #pattern
-* identifier ^slicing.discriminator[=].path = "type"
-* identifier ^slicing.rules = #open
-* identifier contains
-    vn 0..1 MS and
-    an 0..1 MS
-* identifier[vn] ^short = "เลขที่การรับบริการ (VN)"
-* identifier[vn]
-  * type from $VS_TH_IdentifierType (extensible)
-  * type = $CS_TH_IdentifierType#localVn
-  * system 1..
-  * system obeys VN-uri
-  * system ^example.label = "VN namespace"
-  * system ^example.valueUri = $ID_LO_VN
-  * value 1..
-* identifier[an] ^short = "เลขที่ผู้ปวยใน (AN)"
-* identifier[an]
-  * type from $VS_TH_IdentifierType (extensible)
-  * type = $CS_TH_IdentifierType#localAn
-  * system 1..
-  * system obeys AN-uri
-  * system ^example.label = "AN namespace"
-  * system ^example.valueUri = $ID_LO_AN
-  * value 1..
 * status MS
 * class MS
 * priority MS
@@ -45,16 +20,11 @@ Description: "การรับบริการโดยทั่วไป"
 * priority.coding ^slicing.rules = #open
 * priority.coding contains
     hl7 0..1 MS and
-    43plus 0..1 MS and
     thccAccident 0..1 MS
 * priority.coding[hl7] from $VS_HL7_Priority (extensible)
 * priority.coding[hl7].system 1..
 * priority.coding[hl7].system = $CS_HL7_Priority (exactly)
 * priority.coding[hl7].code 1..
-* priority.coding[43plus] from $VS_43Plus_ServicePriority (extensible)
-* priority.coding[43plus].system 1..
-* priority.coding[43plus].system = $CS_43Plus_ServicePriority (exactly)
-* priority.coding[43plus].code 1..
 * priority.coding[thccAccident] from $VS_THCC_AccidentPriority (extensible)
 * priority.coding[thccAccident].system 1..
 * priority.coding[thccAccident].system = $CS_THCC_AccidentPriority (exactly)
@@ -136,8 +106,6 @@ Description: "การรับบริการโดยทั่วไป"
 * hospitalization.admitSource.coding[thccAccident].system = $CS_THCC_AccidentAdmitSource (exactly)
 * hospitalization.admitSource.coding[thccAccident].code 1..
 * hospitalization.destination only Reference($SD_Organization_Provider)
-* hospitalization.destination.extension contains
-    $EX_TH_EncounterReferOutID named referOutId 0..1 MS
 * location MS
   * extension contains
     $EX_TH_EncounterServiceLocationType named serviceLocationType 0..1 MS

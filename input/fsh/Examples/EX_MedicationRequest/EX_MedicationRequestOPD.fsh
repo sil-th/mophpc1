@@ -20,7 +20,10 @@ Usage: #example
 * status = #completed
 * intent = #order
 * category = $CS_eClaim_MedicationCategory#2 "ใช้ที่บ้าน"
-* medicationReference = Reference(Medication/medication-opd-amoxicillin) "Amoxicillin 500 mg"
+* medicationCodeableConcept
+  * coding[0] = $CS_TMT#227162 "AAMOX 500 (ห้างขายยาตราเจ็ดดาว) (amoxicillin 500 mg) film-coated tablet, 1 tablet"
+  * coding[+] = $CS_TH_LocalDrugCode#1233 "Local code amoxycillin 500 mg"
+  * text = "Amoxycillin 500 mg"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * encounter = Reference(Encounter/encounter-opd2)
 * authoredOn = "2022-01-01T12:30:02+07:00"

@@ -2,7 +2,7 @@ Profile: MophPcObservationVitalBase
 Parent: Observation
 Id: mophpc-observation-vital-base
 Title: "MoPH-PC Observation: Vital"
-Description: "ข้อมูลการตรวจสัญญาณชีพ"
+Description: "การตรวจสัญญาณชีพ"
 * ^url = $SD_Observation_VitalBase
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
@@ -17,14 +17,11 @@ Description: "ข้อมูลการตรวจสัญญาณชีพ
 * category[hl7] = $CS_HL7_ObservationCat#vital-signs
 * code MS
 * code ^short = "รหัสการตรวจสัญญาณชีพ"
-* code.coding ^slicing.discriminator[0].type = #pattern
-* code.coding ^slicing.discriminator[=].path = "$this"
-* code.coding ^slicing.rules = #open
-* code.coding contains
-    code43Plus 0..1 MS
-* code.coding[code43Plus] from $VS_Meta_Vital_ObsList (extensible)
+* code from $VS_Meta_Vital_ObsList (preferred)
 * subject 1.. MS
 * subject only Reference($SD_Patient_Base)
 * effective[x] MS
+* effective[x] only dateTime or Period
 * value[x] MS
 * value[x] ^short = "ผลของการตรวจสัญญาณชีพ"
+* value[x] only Quantity or CodeableConcept or Range or Ratio

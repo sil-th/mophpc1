@@ -2,7 +2,7 @@ Profile: MophPcRelatedPersonBase
 Parent: RelatedPerson
 Id: mophpc-relatedperson-base
 Title: "MoPH-PC RelatedPerson"
-Description: "ข้อมูลผู้ญาติของผู้ที่มาใช้บริการ"
+Description: "บุคคลที่เกี่ยวข้องกับผู้ป่วย/ผู้รับบริการสุขภาพ"
 * ^url = $SD_RelatedPerson_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
@@ -12,26 +12,8 @@ Description: "ข้อมูลผู้ญาติของผู้ที่
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains
-    pid 0..1 MS and
     cid 0..1 MS and
-    hn 0..1 MS and
     passportNo 0..* MS
-* identifier[pid] ^short = "เลขทะเบียนบุคคล"
-* identifier[pid] ^comment = "เลขทะเบียนของบุคคลที่มาขึ้นทะเบียนในสถานบริการนั้นๆ ใช้สำหรับเชื่อมโยงหาตัวบุคคลในแฟ้มอื่นๆ กำหนดได้ตั้งแต่ 1-15 หลัก (program generate)"
-* identifier[pid]
-  * type from $VS_TH_IdentifierType (extensible)
-  * type = $CS_TH_IdentifierType#localPid
-  * system 1..
-  * system obeys PID-uri
-  * system ^example.label = "PID namespace"
-  * system ^example.valueUri = $ID_LO_PID
-  * value 1..
-  * value obeys PID-length
-  * value ^example.label = "เลขทะเบียนบุคคล"
-  * value ^example.valueString = "123456789012345"
-  * period
-    * start ^short = "วันที่ย้ายเข้ามาเขตพื้นที่รับผิดชอบ"
-    * end ^short = "วันที่จำหน่าย"
 * identifier[cid] ^short = "เลขที่บัตรประชาชน"
 * identifier[cid] ^comment = "เลขประจำตัวประชาชน"
 * identifier[cid]
@@ -43,17 +25,6 @@ Description: "ข้อมูลผู้ญาติของผู้ที่
   * value obeys CID-length
   * value ^example.label = "เลขประจำตัวประชาชน"
   * value ^example.valueString = "1234567890123"
-* identifier[hn] ^short = "เลขประจำตัวผู้ป่วย (HN)"
-* identifier[hn]
-  * type from $VS_TH_IdentifierType (extensible)
-  * type = $CS_TH_IdentifierType#localHn
-  * system 1..
-  * system obeys HN-uri
-  * system ^example.label = "HN namespace"
-  * system ^example.valueUri = $ID_LO_HN
-  * value 1..
-  * value ^example.label = "เลขประจำตัวผู้ป่วย (HN)"
-  * value ^example.valueString = "123456"
 * identifier[passportNo] ^short = "เลขที่ passport กรณีที่เป็นประชากรต่างด้าวที่มีเลขที่ passport"
 * identifier[passportNo]
   * type from $VS_HL7_IdentifierType (extensible)

@@ -2,7 +2,7 @@ Profile: MophPcDiagnosticReportBase
 Parent: DiagnosticReport
 Id: mophpc-diagnosticreport-base
 Title: "MoPH-PC DiagnosticReport"
-Description: "การรายงานผลการตรวจ"
+Description: "การรายงานผลการตรวจวินิจฉัยทางคลินิก"
 * ^url = $SD_DiagnosticReport_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
@@ -14,8 +14,7 @@ Description: "การรายงานผลการตรวจ"
 * code.coding ^slicing.rules = #open
 * code.coding contains
     loinc 0..1 MS and
-    tmlt 0..1 MS and
-    icd10tm 0..1 MS
+    tmlt 0..1 MS
 * code.coding[loinc] from $VS_LNC_Report (extensible)
 * code.coding[loinc].system 1..
 * code.coding[loinc].system = $LNC (exactly)
@@ -24,10 +23,6 @@ Description: "การรายงานผลการตรวจ"
 * code.coding[tmlt].system 1..
 * code.coding[tmlt].system = $CS_TMLT (exactly)
 * code.coding[tmlt].code 1..
-* code.coding[icd10tm] from $VS_TH_ICD10TM_Lab (extensible)
-* code.coding[icd10tm].system 1..
-* code.coding[icd10tm].system = $CS_TH_ICD10TM_Lab (exactly)
-* code.coding[icd10tm].code 1..
 * subject 1.. MS
 * subject only Reference($SD_Patient_Base)
 * effective[x] MS

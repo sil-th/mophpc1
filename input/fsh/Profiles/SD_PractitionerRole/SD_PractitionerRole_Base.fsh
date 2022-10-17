@@ -2,7 +2,7 @@ Profile: MophPcPractitionerRoleBase
 Parent: PractitionerRole
 Id: mophpc-practitionerrole-base
 Title: "MoPH-PC PractitionerRole"
-Description: "ข้อมูลการปฏิบัติงานผู้ให้บริการของสถานพยาบาล"
+Description: "บทบาทในการปฏิบัติงานของผู้ให้บริการสุขภาพ"
 * ^url = $SD_PractitionerRole_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"

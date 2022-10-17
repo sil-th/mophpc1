@@ -2,7 +2,7 @@ Profile: MophPcPractitionerBase
 Parent: Practitioner
 Id: mophpc-practitioner-base
 Title: "MoPH-PC Practitioner"
-Description: "ข้อมูลผู้ให้บริการของสถานพยาบาล"
+Description: "ผู้ให้บริการสุขภาพ"
 * ^url = $SD_Practitioner_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"

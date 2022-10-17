@@ -12,7 +12,6 @@ Usage: #example
 * code
   * coding[loinc] = $LNC#57698-3 "Lipid panel with direct LDL - Serum or Plasma"
   * coding[tmlt] = $CS_TMLT#320259 "Lipid profile (Cholesterol, HDL-chol, LDL-chol, TG)"
-  * coding[icd10tm] = $CS_TH_ICD10TM_Lab#0544002 "Lipids (total), serum/plasma" 
   * text = "Lipid Profile"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * issued = "2022-04-01T12:30:02+07:00"

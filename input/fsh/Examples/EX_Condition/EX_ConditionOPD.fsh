@@ -24,9 +24,6 @@ InstanceOf: $SD_Condition_Base
 Title: "ตัวอย่าง Condition: การวินิจฉัยโรคร่วม ในบริการ OPD บริการปฐมภูมิ"
 Description: "การวินิจฉัยโรคร่วม ในบริการ OPD บริการปฐมภูมิ"
 Usage: #example
-* extension[0]
-  * url = $EX_TH_ConditionIsChronic
-  * valueBoolean = true
 * category = $CS_HL7_ConditionCategory#encounter-diagnosis "Encounter Diagnosis"
 * code
   * coding[0] = $SCT#73211009 "Diabetes mellitus"

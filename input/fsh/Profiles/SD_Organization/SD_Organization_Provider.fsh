@@ -1,8 +1,8 @@
 Profile: MophPcOrganizationProvider
-Parent: $SD_Organization_Base
+Parent: Organization
 Id: mophpc-organization-provider
 Title: "MoPH-PC Organization: Provider"
-Description: "ข้อมูลสถานพยาบาล"
+Description: "หน่วยบริการสุขภาพ"
 * ^url = $SD_Organization_Provider
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"

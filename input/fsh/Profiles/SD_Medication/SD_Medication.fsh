@@ -2,7 +2,7 @@ Profile: MophPcMedicationBase
 Parent: Medication
 Id: mophpc-medication-base
 Title: "MoPH-PC Medication"
-Description: "ยา"
+Description: "รายละเอียดยา"
 * ^url = $SD_Medication_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
@@ -14,13 +14,8 @@ Description: "ยา"
 * code.coding ^slicing.discriminator.path = "system"
 * code.coding ^slicing.rules = #open
 * code.coding contains
-    24-digit 0..1 MS and
     tmt 0..1 MS and
     local 0..1 MS
-* code.coding[24-digit] ^short = "รหัสยามาตรฐาน 24 หลัก"
-* code.coding[24-digit].system 1..
-* code.coding[24-digit].system = $CS_24Drug (exactly)
-* code.coding[24-digit].code 1..
 * code.coding[tmt] ^short = "รหัสยามาตรฐาน TMT"
 * code.coding[tmt].system 1..
 * code.coding[tmt].system = $CS_TMT (exactly)

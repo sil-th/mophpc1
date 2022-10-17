@@ -84,7 +84,7 @@ Usage: #example
 * category = $CS_HL7_ObservationCat#vital-signs "Vital Signs"
   * text = "Vital Signs"
 * code
-  * coding[code43Plus] = $LNC#85354-9 "Blood pressure panel with all children optional"
+  * coding[0] = $LNC#85354-9 "Blood pressure panel with all children optional"
   * text = "Blood pressure panel with all children optional"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
@@ -110,7 +110,7 @@ Usage: #example
 * category = $CS_HL7_ObservationCat#vital-signs "Vital Signs"
   * text = "Vital Signs"
 * code
-  * coding[code43Plus] = $LNC#8867-4 "Heart rate"
+  * coding[0] = $LNC#8867-4 "Heart rate"
   * text = "Heart rate"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
@@ -127,7 +127,7 @@ Usage: #example
 * category = $CS_HL7_ObservationCat#vital-signs "Vital Signs"
   * text = "Vital Signs"
 * code
-  * coding[code43Plus] = $LNC#9279-1 "Respiratory rate"
+  * coding[0] = $LNC#9279-1 "Respiratory rate"
   * text = "Respiratory rate"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
@@ -169,132 +169,3 @@ Usage: #example
 * valueQuantity = 120 'cm' "cm"
 
 
-
-
-Instance: observation-physical-pe1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจร่างกาย"
-Description: "Physical findings"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#55286-9 "Physical exam by body areas"
-  * text = "Physical exam by body areas"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* hasMember[0] = Reference(Observation/observation-physical-ga1)
-* hasMember[+] = Reference(Observation/observation-physical-heent1)
-* hasMember[+] = Reference(Observation/observation-physical-heart1)
-* hasMember[+] = Reference(Observation/observation-physical-chest1)
-* hasMember[+] = Reference(Observation/observation-physical-abd1)
-* hasMember[+] = Reference(Observation/observation-physical-ext1)
-* hasMember[+] = Reference(Observation/observation-physical-neu1)
-
-Instance: observation-physical-ga1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ General Appearance"
-Description: "General appearance"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#32434-3 "General appearance"
-  * text = "General appearance"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"
-
-
-
-Instance: observation-physical-heent1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ HEENT"
-Description: "Physical findings of Head"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#8701-5 "Physical findings of Head"
-  * text = "Physical findings of Head"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"
-
-Instance: observation-physical-heart1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ Heart"
-Description: "Physical findings of Heart"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#8702-3 "Physical findings of Heart"
-  * text = "Physical findings of Heart"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"
-
-Instance: observation-physical-chest1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ Chest & Lung"
-Description: "Physical findings of Thorax and Lungs"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#8710-6 "Physical findings of Thorax and Lungs"
-  * text = "Physical findings of Thorax and Lungs"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"
-
-Instance: observation-physical-abd1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ Abdomen"
-Description: "Physical findings of Abdomen"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#8694-2 "Physical findings of Abdomen"
-  * text = "Physical findings of Abdomen"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"
-
-Instance: observation-physical-ext1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ Extremities"
-Description: "Physical findings of Extremities"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#8703-1 "Physical findings of Extremities"
-  * text = "Physical findings of Extremities"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"
-
-Instance: observation-physical-neu1
-InstanceOf: $SD_Observation_PhysicalBase
-Title: "ตัวอย่าง Observation: การตรวจ Neuro"
-Description: "Physical findings of Nervous system"
-Usage: #example
-* status = #final
-* category = $CS_HL7_ObservationCat#exam "Exam"
-  * text = "Exam"
-* code
-  * coding[0] = $LNC#8705-6 "Physical findings of Nervous system"
-  * text = "Physical findings of Nervous system"
-* subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* effectiveDateTime = "2018-03-11T12:30:02+07:00"
-* valueString = "WNL"

@@ -33,16 +33,14 @@ Alias: $EX_TH_PatientPidRemoveReason = https://fhir-ig.sil-th.org/mophpc1/Struct
 // Encounter
 Alias: $EX_TH_EncounterDischargeInstruction = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-discharge-instruction
 Alias: $EX_TH_EncounterDischargeStatus = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-discharge-status
-Alias: $EX_TH_EncounterFpCaseType = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-fp-case-type
 Alias: $EX_TH_EncounterPatientLocationType = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-patient-location-type
 Alias: $EX_TH_EncounterProviderType = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-provider-type
-Alias: $EX_TH_EncounterReferOutID = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-refer-out-id
 Alias: $EX_TH_EncounterServiceHour = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-service-hour
 Alias: $EX_TH_EncounterServiceLocationType = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-service-location-type
 Alias: $EX_TH_EncounterServiceTypeTH = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-encounter-service-type-th
 
 // Condition
-Alias: $EX_TH_ConditionIsChronic = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-condition-is-chronic
+Alias: $EX_TH_ConditionChronicDischargeReason = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-condition-chronic-discharge-reason
 
 // Practitioner
 Alias: $EX_TH_PractitionerQualificationIssuer = https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-practitioner-qualification-issuer
