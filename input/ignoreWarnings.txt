@@ -4,6 +4,14 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
+# seems to be bug
+URL value 'http://hl7.org/fhir/build/StructureDefinition/binding-definition' does not resolve
+The extension http://hl7.org/fhir/build/StructureDefinition/binding-definition is unknown, and not allowed here
+
+# misc
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+
 # fake code systems from core spec
 The link 'http://terminology.hl7.org/ValueSet/v2-2.7-0360' for "http://terminology.hl7.org/ValueSet/v2-2.7-0360" cannot be resolved
 The link 'practitioner-role.html' for "practitioner-role" cannot be resolved

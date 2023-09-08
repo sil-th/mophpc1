@@ -4,24 +4,27 @@
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: silth.fhir.th.mophpc1
-canonical: https://fhir-ig.sil-th.org/mophpc1
-version: 0.1.0
+canonical: https://fhir-ig.sil-th.org/th/mophpc1
+version: 0.1.1
 name: Moph43FilesImplementaionGuide
-title: (Draft) MoPH Primary Care (MoPH-PC-1) - FHIR Implementation Guide
-status: draft
-publisher: Standards and Interoperability Lab - Thailand (SIL-TH)
+title: MoPH Primary Care 1 (MoPH-PC-1) - FHIR Implementation Guide (STU1)
+status: active
+publisher:
+  name: Standards and Interoperability Lab - Thailand (SIL-TH)
+  url: https://www.sil-th.org
 # contact:
 #   - name: Bill Cod
 #     telecom:
 #       - system: email
 #         value: cod@reef.gov
 jurisdiction: "urn:iso:std:iso:3166#TH"
-description: An implementation guide for adopting FHIR for health information exchange in 43files-plus format
+description: An implementation guide for adopting FHIR for health information exchange in 43files-plus format.
 license: CC0-1.0
 fhirVersion: 4.3.0
 dependencies:
-  sil-th.terms.core: dev
-  hl7.fhir.uv.ips: 1.0.0
+  silth.fhir.terminology.core: 0.1.1
+  silth.fhir.th.extensions: 0.1.0
+  hl7.fhir.uv.ips: 1.1.0
 parameters:
   apply-publisher: true
   apply-contact: true
@@ -38,6 +41,8 @@ pages:
     title: รายการ Profiles
   extensions.md:
     title: รายการ Extensions
+  change_log.md:
+    title: Release Notes
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -47,7 +52,8 @@ menu:
   สารบัญ: toc.html
   เนื้อหาทั้งหมด: artifacts.html
   Profiles: profiles.html
-  Extensions: extensions.html
+  Release Notes: change_log.html
+  # Extensions: extensions.html
   # 43 แฟ้ม plus: files-listing.html
   # Other Resources:
   #   "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

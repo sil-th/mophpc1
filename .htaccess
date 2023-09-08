@@ -1,5 +1,0 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteRule ^StructureDefinition/(.*)$ https://fhir-ig.sil-th.org/mophpc1/StructureDefinition-$1.html [R]
-  RewriteRule ^Extension/(.*)$ https://fhir-ig.sil-th.org/mophpc1/StructureDefinition-$1.html [R]
-</IfModule>

@@ -50,7 +50,15 @@ Usage: #example
 * address[0]
   * extension[0]
     * url = $EX_TH_AddressDopaCode
-    * valueCodeableConcept = $CS_DOPA_Location#342001 "จังหวัดอุบลราชธานี อำเภอตาลสุม ตำบลตาลสุม"
+    * extension[0]
+      * url = "changwat"
+      * valueCodeableConcept = $CS_DOPA_Location#34 "อุบลราชธานี"
+    * extension[0]
+      * url = "amphur"
+      * valueCodeableConcept = $CS_DOPA_Location#3420 "ตาลสุม"
+    * extension[0]
+      * url = "tumbol"
+      * valueCodeableConcept = $CS_DOPA_Location#342001 "ตาลสุม"
   * extension[+]
     * url = $EX_HL7_Geolocation
     * extension[0]

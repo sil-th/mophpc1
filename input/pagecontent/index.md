@@ -4,7 +4,7 @@
 
 โดยในขั้นตอนการพัฒนา เกิดขึ้นจากการจับคู่ (mapping) ระหว่างฟิลด์ข้อมูลที่อยู่ในชุดข้อมูล 43 แฟ้มพลัส ให้เข้ากับ FHIR resource และจัดทำเป็น FHIR profile จากนั้นผ่านการคัดกรองและตรวจสอบจากหลายฝ่าย และรวบรวมสิ่งที่สร้างขึ้นทั้งหมดไว้ใน IG นี้
 
-โดย version 0.1 ได้เปิดเผยสู่สาธารณะในรูปแบบ FHIR Implementation Guide ที่เว็บไซต์ [(Draft) MoPH Primary Care (MoPH-PC-1) - FHIR Implementation Guide](https://fhir-ig.sil-th.org/mophpc1/) และเป็นเพียงฉบับร่างที่ต้องขอความเห็นจากสาธารณะและต้องการการปรับปรุงอีกมาก
+โดย version 0.1 ได้เปิดเผยสู่สาธารณะในรูปแบบ FHIR Implementation Guide ที่เว็บไซต์ [MoPH Primary Care 1 (MoPH-PC-1) - FHIR Implementation Guide (STU1)](https://fhir-ig.sil-th.org/th/mophpc1/) และเป็นเพียงฉบับร่างที่ต้องขอความเห็นจากสาธารณะและต้องการการปรับปรุงอีกมาก
 <br />
 <br />
 

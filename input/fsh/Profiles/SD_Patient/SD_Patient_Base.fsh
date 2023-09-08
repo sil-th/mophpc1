@@ -8,10 +8,10 @@ Description: "ผู้ป่วย/ผู้รับบริการสุ�
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
-  $SD_Patient_EX_Nationality named nationality 0..* MS and
+  $EX_TH_Patient_Nationality named nationality 0..* MS and
   $EX_TH_PatientRace named race 0..* MS and
-  $SD_Patient_EX_Religion named religion 0..1 MS and
-  $SD_Patient_EX_Disability named disability 0..* MS and
+  $EX_TH_Patient_Religion named religion 0..1 MS and
+  $EX_TH_Patient_Disability named disability 0..* MS and
   $EX_TH_PatientEducationLevel named educationLevel 0..* MS and
   $EX_TH_PatientPersonStatus named personStatus 0..* MS and
   $EX_TH_PatientPidRemoveReason named pidRemoveReason 0..* MS

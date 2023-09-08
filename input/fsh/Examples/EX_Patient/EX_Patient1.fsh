@@ -4,7 +4,7 @@ Title: "ตัวอย่าง Patient: ผู้ป่วยรายที�
 Description: "มีข้อมูลครบถ้วนสมบูรณ์ ซึ่งจะมีรายละเอียดค่อนข้างมาก ในการใช้งานจริงอาจลดทอนรายละเอียดลง หรือเพิ่มเติมข้อมูลเข้าไปได้เช่นกัน"
 Usage: #example
 * extension[0]
-  * url = $EX_HL7_Nationality
+  * url = $EX_TH_Patient_Nationality
   * extension[0]
     * url = "code"
     * valueCodeableConcept
@@ -22,7 +22,7 @@ Usage: #example
     * coding[+] = $CS_THCC_Nationality#099
     * text = "ไทย"
 * extension[+]
-  * url = $EX_HL7_Religion
+  * url = $EX_TH_Patient_Religion
   * valueCodeableConcept
     * coding[0] = $CS_HL7_Religion#1051 "Theravada"
     * coding[+] = $CS_THCC_Religion#01 "ศาสนาพุทธ"
@@ -110,7 +110,15 @@ Usage: #example
 * address[0]
   * extension[0]
     * url = $EX_TH_AddressDopaCode
-    * valueCodeableConcept = $CS_DOPA_Location#120102 "จังหวัดนนทบุรี อำเภอเมืองนนทบุรี ตำบลตลาดขวัญ"
+    * extension[0]
+      * url = "changwat"
+      * valueCodeableConcept = $CS_DOPA_Location#12 "นนทบุรี"
+    * extension[0]
+      * url = "amphur"
+      * valueCodeableConcept = $CS_DOPA_Location#1201 "เมืองนนทบุรี"
+    * extension[0]
+      * url = "tumbol"
+      * valueCodeableConcept = $CS_DOPA_Location#120102 "ตลาดขวัญ"
   * extension[+]
     * url = $EX_TH_AddressStructuredLine
     * extension[0]
