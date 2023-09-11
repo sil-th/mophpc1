@@ -32,10 +32,11 @@ Usage: #example
 * practitioner = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * organization = Reference(Organization/organization-main) "โรงพยาบาลตัวอย่าง"
 * code = $CS_THCC_IndividualProviderType#01 "แพทย์"
-* telecom[0]
-  * system = #phone
-  * value = "088-8888888"
-  * use = #work
-* telecom[+]
-  * system = #email
-  * value = "sonyingjingjai@jingjai.com"
+* contact
+  * telecom[0]
+    * system = #phone
+    * value = "088-8888888"
+    * use = #work
+  * telecom[+]
+    * system = #email
+    * value = "sonyingjingjai@jingjai.com"

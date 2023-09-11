@@ -11,6 +11,7 @@ Usage: #example
   * text = "การตรวจสัญญาณชีพ"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * interpretation
   * coding[0] = $CS_HL7_ObsInterpret#N "Normal"
   * text = "Normal"
@@ -38,6 +39,7 @@ Usage: #example
   * text = "Body weight"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 80 'kg' "kg"
 
 
@@ -54,6 +56,7 @@ Usage: #example
   * text = "Body height"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 170 'cm' "cm"
 
 
@@ -71,6 +74,7 @@ Usage: #example
   * text = "Body temperature"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 37 'Cel' "Celsius"
 
 
@@ -88,6 +92,7 @@ Usage: #example
   * text = "Blood pressure panel with all children optional"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * component[0]
   * code
     * coding[0] = $LNC#8480-6 "Systolic blood pressure"
@@ -114,6 +119,7 @@ Usage: #example
   * text = "Heart rate"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 80 '/min' "/min"
 
 
@@ -131,6 +137,7 @@ Usage: #example
   * text = "Respiratory rate"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 16 '/min' "/min"
 
 
@@ -148,6 +155,7 @@ Usage: #example
   * text = "Waist Circumference at umbilicus by Tape measure"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 80 'cm' "cm"
 
 
@@ -166,6 +174,7 @@ Usage: #example
   * text = "Hip circumference"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectiveDateTime = "2018-03-11T12:30:02+07:00"
+* performer = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * valueQuantity = 120 'cm' "cm"
 
 

@@ -4,9 +4,7 @@ Id: mophpc-allergyintolerance-base
 Title: "MoPH-PC AllergyIntolerance"
 Description: "การแพ้ยาและสารอื่น ๆ"
 * ^url = $SD_AllergyIntolerance_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
     $EX_TH_AllergyIntoleranceCertainty named certainty 0..1 MS and
     $EX_TH_AllergyIntoleranceSeverity named severityTH 0..1 MS and
@@ -14,8 +12,8 @@ Description: "การแพ้ยาและสารอื่น ๆ"
     $EX_TH_AllergyIntoleranceAssertOrg named asserterOrg 0..1 MS
 * clinicalStatus MS
 * clinicalStatus ^short = "สถานะการแพ้"
-* clinicalStatus.coding ^slicing.discriminator.type = #pattern
-* clinicalStatus.coding ^slicing.discriminator.path = "$this"
+* clinicalStatus.coding ^slicing.discriminator.type = #value
+* clinicalStatus.coding ^slicing.discriminator.path = "system"
 * clinicalStatus.coding ^slicing.rules = #open
 * clinicalStatus.coding contains
     hl7 0..1 MS
@@ -51,11 +49,19 @@ Description: "การแพ้ยาและสารอื่น ๆ"
 * patient only Reference($SD_Patient_Base)
 * patient MS
 * recordedDate MS
-* recorder only Reference($SD_Practitioner_Base)
-* recorder MS
-* recorder ^short = "ผู้บันทึกข้อมูล"
-* asserter MS
-* asserter ^short = "ผู้ยืนยันข้อมูล"
+* participant ^slicing.discriminator.type = #value
+* participant ^slicing.discriminator.path = "function"
+* participant ^slicing.rules = #open
+* participant contains
+  author 0..1 MS and
+  informant 0..1 MS  
+* participant[author] MS
+* participant[author] ^short = "ผู้ยืนยันความถูกต้องของข้อมูล"
+* participant[author].function = $CS_HL7_ProvenanceParticipantType#author
+* participant[author].actor only Reference($SD_Practitioner_Base)
+* participant[informant] MS
+* participant[informant] ^short = "ผู้ให้ข้อมูลการแพ้"
+* participant[informant].function = $CS_HL7_ProvenanceParticipantType#informant
 * reaction MS
   * manifestation MS
   * manifestation ^short = "ลักษณะอาการแพ้"

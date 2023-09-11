@@ -4,12 +4,10 @@ Id: mophpc-observation-vital-base
 Title: "MoPH-PC Observation: Vital"
 Description: "การตรวจสัญญาณชีพ"
 * ^url = $SD_Observation_VitalBase
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * status MS
 * category MS
-* category ^slicing.discriminator[0].type = #pattern
+* category ^slicing.discriminator[0].type = #value
 * category ^slicing.discriminator[=].path = "$this"
 * category ^slicing.rules = #open
 * category contains hl7 0..1

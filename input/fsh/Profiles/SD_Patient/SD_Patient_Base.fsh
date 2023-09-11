@@ -4,9 +4,7 @@ Id: mophpc-patient-base
 Title: "MoPH-PC Patient"
 Description: "ผู้ป่วย/ผู้รับบริการสุขภาพ"
 * ^url = $SD_Patient_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
   $EX_TH_Patient_Nationality named nationality 0..* MS and
   $EX_TH_PatientRace named race 0..* MS and
@@ -23,7 +21,7 @@ Description: "ผู้ป่วย/ผู้รับบริการสุ�
 * extension[personStatus] ^short = "สถานะบุคคลของผู้ป่วย"
 * extension[pidRemoveReason] ^short = "สถานะ/สาเหตุการจำหน่ายจากเขตรับผิดชอบ (ถ้ามี)"
 * identifier MS
-* identifier ^slicing.discriminator[0].type = #pattern
+* identifier ^slicing.discriminator[0].type = #value
 * identifier ^slicing.discriminator[=].path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains

@@ -29,9 +29,12 @@ Usage: #example
   * text = "Amoxycillin 500 mg"
 * patient = Reference(Patient/patient-patient4)
 * recordedDate = "2022-05-29"
-* recorder = Reference(Practitioner/practitioner-doctor1)
+* participant
+  * function = $CS_HL7_ProvenanceParticipantType#author "Author"
+  * actor = Reference(Practitioner/practitioner-doctor1)
 * reaction
   * manifestation
-    * coding[0] = $SCT#28926001 "Eruption caused by drug"
-    * coding[+] = $CS_THCC_AllergyManifest#26 "L27.19"
-    * text = "ผื่นขึ้นหลังได้ยา"
+    * concept
+      * coding[0] = $SCT#28926001 "Eruption caused by drug"
+      * coding[+] = $CS_THCC_AllergyManifest#26 "L27.19"
+      * text = "ผื่นขึ้นหลังได้ยา"

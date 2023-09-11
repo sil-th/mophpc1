@@ -4,11 +4,9 @@ Id: mophpc-relatedperson-base
 Title: "MoPH-PC RelatedPerson"
 Description: "บุคคลที่เกี่ยวข้องกับผู้ป่วย/ผู้รับบริการสุขภาพ"
 * ^url = $SD_RelatedPerson_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * identifier MS
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains

@@ -5,9 +5,9 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: silth.fhir.th.mophpc1
 canonical: https://fhir-ig.sil-th.org/th/mophpc1
-version: 0.1.1
+version: 1.0.0
 name: Moph43FilesImplementaionGuide
-title: MoPH Primary Care 1 (MoPH-PC-1) - FHIR Implementation Guide (STU1)
+title: MoPH Primary Care 1 (MoPH-PC-1) - FHIR Implementation Guide (STU2)
 status: active
 publisher:
   name: Standards and Interoperability Lab - Thailand (SIL-TH)
@@ -17,21 +17,20 @@ publisher:
 #     telecom:
 #       - system: email
 #         value: cod@reef.gov
-jurisdiction: "urn:iso:std:iso:3166#TH"
 description: An implementation guide for adopting FHIR for health information exchange in 43files-plus format.
 license: CC0-1.0
-fhirVersion: 4.3.0
+fhirVersion: 5.0.0
 dependencies:
-  silth.fhir.terminology.core: 0.1.1
-  silth.fhir.th.extensions: 0.1.0
+  #  silth.fhir.terminology.core: 0.1.1
+  #  silth.fhir.th.extensions: 0.1.0
+  silth.fhir.terminology.core: dev
+  silth.fhir.th.extensions: dev
   hl7.fhir.uv.ips: 1.1.0
 parameters:
-  apply-publisher: true
-  apply-contact: true
   show-inherited-invariants: false
   excludettl: true
   excludemap: true
-copyrightYear: 2022+
+copyrightYear: 2023+
 releaseLabel: draft
 
 pages:

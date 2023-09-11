@@ -1,16 +1,12 @@
 {
   "package-id": "silth.fhir.th.mophpc1",
-  "version": "0.1.1",
-  "path": "https://fhir-ig.sil-th.org/th/mophpc1/0.1.1",
+  "version": "1.0.0",
+  "path": "https://fhir-ig.sil-th.org/th/mophpc1/1.0.0",
   "mode": "milestone",
   "status": "trial-use",
-  "sequence": "STU1 Release 1",
-  "desc": "Initial publication of the MoPC-PC-1 IG.",
-  "descmd": "Initial publication of the MoPC-PC-1 IG.",
+  "sequence": "STU2 Release 1",
+  "desc": "Conversion to R5",
+  "descmd": "Conversion to R5",
   "changes": "change_log.html",
-  "first": true,
-  "title": "MoPH Primary Care 1 (MoPH-PC-1) - FHIR Implementation Guide (STU1)",
-  "ci-build": "https://fhir-ig.sil-th.org/th/mophpc1/",
-  "category": "Clinical Documents",
-  "introduction": "An implementation guide for adopting FHIR for health information exchange in 43files-plus format."
+  "first": false
 }

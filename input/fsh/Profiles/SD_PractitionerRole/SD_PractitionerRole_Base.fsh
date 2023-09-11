@@ -4,9 +4,7 @@ Id: mophpc-practitionerrole-base
 Title: "MoPH-PC PractitionerRole"
 Description: "บทบาทในการปฏิบัติงานของผู้ให้บริการสุขภาพ"
 * ^url = $SD_PractitionerRole_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
   $EX_TH_PractitionerRoleProviderMovement named movement 0..* MS
 * identifier MS

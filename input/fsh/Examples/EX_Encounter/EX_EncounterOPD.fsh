@@ -8,7 +8,7 @@ Usage: #example
 * extension[0]
   * url = $EX_TH_EncounterServiceTypeTH 
   * valueCodeableConcept = $CS_eClaim_ServiceTypeTH#0 "Refer ในบัญชีเครือข่ายเดียวกัน"
-* status = #finished
+* status = #completed
 * class = $CS_HL7_EncounterClass#AMB "ambulatory"
 * priority
   * coding[hl7] = $CS_HL7_Priority#R "routine"
@@ -21,17 +21,19 @@ Usage: #example
   * type
     * coding[hl7] = $CS_HL7_ParticipantType#PPRF "primary performer"
     * coding[43plus] = $CS_Meta_ParticipantType#PPRF "แพทย์เจ้าของคนไข้"
-  * individual = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
-* period
+  * actor = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
+* actualPeriod
   * extension
     * url = $EX_TH_EncounterServiceHour 
     * valueCodeableConcept = $CS_THCC_ServiceHour#1 "ในเวลาราชการ"
   * start = "2022-01-01T12:30:02+07:00"
   * end = "2022-01-01T14:30:02+07:00"
-* reasonCode[0]
-  * coding[0] = $SCT#386661006 "Fever"
-  * text = "มีไข้ 3 วัน"
-* hospitalization
+* reason[0]
+  * value[0]
+    * concept
+      * coding[0] = $SCT#386661006 "Fever"
+      * text = "มีไข้ 3 วัน"
+* admission
   * extension[0]
     * url = $EX_TH_EncounterDischargeStatus 
     * valueCodeableConcept = $CS_THCC_DischargeStatus#3 "ส่งต่อไปยังสถานพยาบาลอื่น"
@@ -72,7 +74,7 @@ Usage: #example
     * coding[0] = $CS_TH_IdentifierType#localVn "เลข Visit Number (VN) ของหน่วยบริการ"
   * system = $ID_LO_VN
   * value = "65-XXXXX"
-* status = #finished
+* status = #completed
 * class = $CS_HL7_EncounterClass#AMB "ambulatory"
 * priority
   * coding[hl7] = $CS_HL7_Priority#R "routine"
@@ -85,20 +87,24 @@ Usage: #example
   * type
     * coding[hl7] = $CS_HL7_ParticipantType#PPRF "primary performer"
     * coding[43plus] = $CS_Meta_ParticipantType#PPRF "แพทย์เจ้าของคนไข้"
-  * individual = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
-* period
+  * actor = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
+* actualPeriod
   * start = "2022-01-01T12:30:02+07:00"
   * end = "2022-01-01T14:30:02+07:00"
-* reasonCode[0]
-  * coding[0] = $SCT#135883003 "Cough with fever"
-  * text = "มีไข้ ไอ 3 วัน"
+* reason[0]
+  * value[0]
+    * concept
+      * coding[0] = $SCT#135883003 "Cough with fever"
+      * text = "มีไข้ ไอ 3 วัน"
 * diagnosis[0]
-  * condition = Reference(Condition/condition-opd2-main)
+  * condition
+    * reference = Reference(Condition/condition-opd2-main)
   * use
     * coding[0] = $CS_HL7_DiagRole#DD "Discharge diagnosis"
     * coding[+] = $CS_43Plus_EncounterDiagnosisRole#1 "PRINCIPLE DX (การวินิจฉัยโรคหลัก)"
 * diagnosis[+]
-  * condition = Reference(Condition/condition-opd2-comorbid)
+  * condition
+    * reference = Reference(Condition/condition-opd2-comorbid)
   * use
     * coding[0] = $CS_HL7_DiagRole#DD "Discharge diagnosis"
     * coding[+] = $CS_43Plus_EncounterDiagnosisRole#1 "PRINCIPLE DX (การวินิจฉัยโรคหลัก)"

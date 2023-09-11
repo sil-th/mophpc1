@@ -7,11 +7,12 @@ Usage: #example
   * type = $CS_TH_IdentifierType#localSelfMed "รหัสระบุยาที่ผู้รับบริการจัดหาเอง ซึ่งออกโดยหน่วยบริการ"
   * system = $ID_LO_SelfDrug
   * value = "XXXXXX"
-* status = #completed
-* medicationCodeableConcept
-  * coding[0] = $CS_TMT#227162 "AAMOX 500 (ห้างขายยาตราเจ็ดดาว) (amoxicillin 500 mg) film-coated tablet, 1 tablet"
-  * coding[+] = $CS_TH_LocalDrugCode#1233 "Local code amoxycillin 500 mg"
-  * text = "Amoxycillin 500 mg"
+* status = #recorded
+* medication
+  * concept
+    * coding[0] = $CS_TMT#227162 "AAMOX 500 (ห้างขายยาตราเจ็ดดาว) (amoxicillin 500 mg) film-coated tablet, 1 tablet"
+    * coding[+] = $CS_TH_LocalDrugCode#1233 "Local code amoxycillin 500 mg"
+    * text = "Amoxycillin 500 mg"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * effectivePeriod
   * start = "2021-03-24"
@@ -25,7 +26,7 @@ Usage: #example
       * frequency = 1
       * period = 1
       * periodUnit = #d
-  * route = $SCT#260548002 "Oral"
+  * route = $SCT#26643006 "Oral route"
   * doseAndRate
     * doseQuantity
       * value = 1

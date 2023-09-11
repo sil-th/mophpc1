@@ -4,9 +4,7 @@ Id: mophpc-specimen-base
 Title: "MoPH-PC Specimen"
 Description: "สิ่งส่งตรวจ"
 * ^url = $SD_Specimen_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * type MS
 * type ^short = "ประเภทสิ่งส่งตรวจ"
 * type.coding ^slicing.discriminator.type = #value

@@ -51,13 +51,13 @@ Usage: #example
   * extension[0]
     * url = $EX_TH_AddressDopaCode
     * extension[0]
-      * url = "changwat"
+      * url = "province"
       * valueCodeableConcept = $CS_DOPA_Location#34 "อุบลราชธานี"
     * extension[0]
-      * url = "amphur"
+      * url = "district"
       * valueCodeableConcept = $CS_DOPA_Location#3420 "ตาลสุม"
     * extension[0]
-      * url = "tumbol"
+      * url = "subdistrict"
       * valueCodeableConcept = $CS_DOPA_Location#342001 "ตาลสุม"
   * extension[+]
     * url = $EX_HL7_Geolocation

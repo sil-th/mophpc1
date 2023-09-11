@@ -11,6 +11,8 @@ Usage: #example
   * coding[+] = $CS_TMLT#320070 "Cholesterol [mg/dL] in Serum or Plasma"
   * text = "Cholesterol"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
+* effectiveDateTime = "2022-01-01T12:30:02+07:00"
+* performer = Reference(Organization/organization-main)
 * valueQuantity = 200 'mg/dL' "mg/dL"
 * interpretation = $CS_HL7_ObsInterpret#N "Normal"
 * note.text = "หมายเหตุเพิ่มเติม (ถ้ามี)"
@@ -31,6 +33,8 @@ Usage: #example
   * coding[+] = $CS_TMLT#320072 "Triglyceride [mg/dL] in Serum or Plasma"
   * text = "Triglyceride"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
+* effectiveDateTime = "2022-01-01T12:30:02+07:00"
+* performer = Reference(Organization/organization-main)
 * valueQuantity = 80 'mg/dL' "mg/dL"
 * interpretation = $CS_HL7_ObsInterpret#N "Normal"
 * note.text = "หมายเหตุเพิ่มเติม (ถ้ามี)"
@@ -51,6 +55,8 @@ Usage: #example
   * coding[+] = $CS_TMLT#320293 "Cholesterol in LDL [mg/dL] in Serum or Plasma by calculation"
   * text = "LDL"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
+* effectiveDateTime = "2022-01-01T12:30:02+07:00"
+* performer = Reference(Organization/organization-main)
 * valueQuantity = 80 'mg/dL' "mg/dL"
 * interpretation = $CS_HL7_ObsInterpret#N "Normal"
 * note.text = "หมายเหตุเพิ่มเติม (ถ้ามี)"
@@ -71,6 +77,8 @@ Usage: #example
   * coding[+] = $CS_TMLT#320071 "Cholesterol in HDL [mg/dL] in Serum or Plasma"
   * text = "HDL"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
+* effectiveDateTime = "2022-01-01T12:30:02+07:00"
+* performer = Reference(Organization/organization-main)
 * valueQuantity = 60 'mg/dL' "mg/dL"
 * interpretation = $CS_HL7_ObsInterpret#N "Normal"
 * note.text = "หมายเหตุเพิ่มเติม (ถ้ามี)"

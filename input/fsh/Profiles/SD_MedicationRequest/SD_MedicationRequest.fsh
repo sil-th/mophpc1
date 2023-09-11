@@ -4,9 +4,7 @@ Id: mophpc-medicationrequest-base
 Title: "MoPH-PC MedicationRequest"
 Description: "การสั่งยา"
 * ^url = $SD_MedicationRequest_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
     $EX_TH_MedicationRequestSource named medicationSource 0..* MS and
     $EX_TH_MedicationRequestNedCriteria named npc 0..* MS and
@@ -22,24 +20,23 @@ Description: "การสั่งยา"
 * category[eclaim].coding.system 1..
 * category[eclaim].coding.system = $CS_eClaim_MedicationCategory
 * category[eclaim].coding.code 1..
-* medication[x] 1.. MS
-* medication[x] only CodeableConcept
-* medicationCodeableConcept MS
-* medicationCodeableConcept.coding ^slicing.discriminator.type = #value
-* medicationCodeableConcept.coding ^slicing.discriminator.path = "system"
-* medicationCodeableConcept.coding ^slicing.rules = #open
-* medicationCodeableConcept.coding contains
-    tmt 0..1 MS and
-    local 0..1 MS
-* medicationCodeableConcept.coding[tmt] ^short = "รหัสยามาตรฐาน TMT"
-* medicationCodeableConcept.coding[tmt] from $VS_TMT (extensible)
-* medicationCodeableConcept.coding[tmt].system 1..
-* medicationCodeableConcept.coding[tmt].system = $CS_TMT (exactly)
-* medicationCodeableConcept.coding[tmt].code 1..
-* medicationCodeableConcept.coding[local] ^short = "รหัสยาของสถานพยาบาล"
-* medicationCodeableConcept.coding[local].system 1..
-* medicationCodeableConcept.coding[local].system = $CS_TH_LocalDrugCode (exactly)
-* medicationCodeableConcept.coding[local].code 1..
+* medication MS
+  * concept MS
+    * coding ^slicing.discriminator.type = #value
+    * coding ^slicing.discriminator.path = "system"
+    * coding ^slicing.rules = #open
+    * coding contains
+      tmt 0..1 MS and
+      local 0..1 MS
+    * coding[tmt] ^short = "รหัสยามาตรฐาน TMT"
+    * coding[tmt] from $VS_TMT (extensible)
+    * coding[tmt].system 1..
+    * coding[tmt].system = $CS_TMT (exactly)
+    * coding[tmt].code 1..
+    * coding[local] ^short = "รหัสยาของสถานพยาบาล"
+    * coding[local].system 1..
+    * coding[local].system = $CS_TH_LocalDrugCode (exactly)
+    * coding[local].code 1..
 * subject only Reference($SD_Patient_Base)
 * subject MS
 * encounter only Reference($SD_Encounter_Base)
@@ -47,7 +44,7 @@ Description: "การสั่งยา"
 * authoredOn MS
 * requester only Reference($SD_Practitioner_Base)
 * requester MS
-* reasonCode MS
+* reason MS
 * note MS
 * dosageInstruction MS
   * extension contains $EX_TH_MedicationRequestDosageCode named dosageCode 0..1 MS

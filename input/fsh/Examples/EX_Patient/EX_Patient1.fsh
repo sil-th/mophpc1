@@ -111,13 +111,13 @@ Usage: #example
   * extension[0]
     * url = $EX_TH_AddressDopaCode
     * extension[0]
-      * url = "changwat"
+      * url = "province"
       * valueCodeableConcept = $CS_DOPA_Location#12 "นนทบุรี"
     * extension[0]
-      * url = "amphur"
+      * url = "district"
       * valueCodeableConcept = $CS_DOPA_Location#1201 "เมืองนนทบุรี"
     * extension[0]
-      * url = "tumbol"
+      * url = "subdistrict"
       * valueCodeableConcept = $CS_DOPA_Location#120102 "ตลาดขวัญ"
   * extension[+]
     * url = $EX_TH_AddressStructuredLine

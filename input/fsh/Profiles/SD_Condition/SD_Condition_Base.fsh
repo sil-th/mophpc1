@@ -4,9 +4,7 @@ Id: mophpc-condition-base
 Title: "MoPH-PC Condition"
 Description: "การวินิจฉัยโรค/ปัญหาสุขภาพ/อาการทางคลินิก"
 * ^url = $SD_Condition_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
     $EX_HL7_ConditionDueTo named dueTo 0..* MS and
     $EX_TH_ConditionChronicDischargeReason named chronicDischargeReason 0..1 MS
@@ -56,6 +54,13 @@ Description: "การวินิจฉัยโรค/ปัญหาสุ�
 * subject MS
 * onset[x] MS
 * recordedDate MS
-* asserter only Reference($SD_Practitioner_Base)
-* asserter MS
+* participant ^slicing.discriminator.type = #value
+* participant ^slicing.discriminator.path = "function"
+* participant ^slicing.rules = #open
+* participant contains
+  author 0..1 MS
+* participant[author] MS
+* participant[author] ^short = "ผู้ยืนยันความถูกต้องของข้อมูล"
+* participant[author].function = $CS_HL7_ProvenanceParticipantType#author
+* participant[author].actor only Reference($SD_Practitioner_Base)
 * note MS

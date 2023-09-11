@@ -4,9 +4,7 @@ Id: mophpc-procedure-base
 Title: "MoPH-PC Procedure"
 Description: "การทำหัตถการหรือการรักษา"
 * ^url = $SD_Procedure_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
     $EX_TH_ProcedureProcedureType named procedureType 0..* MS
 * status MS
@@ -33,8 +31,8 @@ Description: "การทำหัตถการหรือการรัก
 * code.coding[local].system = $CS_TH_LocalProcedureCode (exactly)
 * subject 1.. MS
 * subject only Reference($SD_Patient_Base)
-* performed[x] MS
-* performed[x] only dateTime or Period or string
+* occurrence[x] MS
+* occurrence[x] only dateTime or Period or string
 * performer MS
   * actor only Reference($SD_Practitioner_Base)
   * onBehalfOf MS

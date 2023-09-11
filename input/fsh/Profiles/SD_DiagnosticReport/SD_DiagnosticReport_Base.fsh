@@ -4,8 +4,7 @@ Id: mophpc-diagnosticreport-base
 Title: "MoPH-PC DiagnosticReport"
 Description: "การรายงานผลการตรวจวินิจฉัยทางคลินิก"
 * ^url = $SD_DiagnosticReport_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
+* ^status = #active
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * code MS
 * code.coding 1..

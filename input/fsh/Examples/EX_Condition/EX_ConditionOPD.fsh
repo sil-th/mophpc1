@@ -8,6 +8,7 @@ Usage: #example
   * valueCodeableConcept
     * coding = $SCT#58800005 "Genus Streptococcus"
     * text = "สาเหตุการป่วย (ถ้าสามารถระบุได้)"
+* clinicalStatus = $CS_HL7_ConditionStatus#active "Active"
 * category = $CS_HL7_ConditionCategory#encounter-diagnosis "Encounter Diagnosis"
 * code
   * coding[0] = $SCT#43878008 "Streptococcal pharyngitis"
@@ -15,7 +16,9 @@ Usage: #example
   * text = "Streptococcal pharyngitis"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * onsetDateTime = "2022-01-01T12:30:02+07:00"
-* asserter = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
+* participant
+  * function = $CS_HL7_ProvenanceParticipantType#author "Author"
+  * actor = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * note.text = "หมายเหตุประกอบการวินิจฉัยโรค"
 
 
@@ -24,6 +27,7 @@ InstanceOf: $SD_Condition_Base
 Title: "ตัวอย่าง Condition: การวินิจฉัยโรคร่วม ในบริการ OPD บริการปฐมภูมิ"
 Description: "การวินิจฉัยโรคร่วม ในบริการ OPD บริการปฐมภูมิ"
 Usage: #example
+* clinicalStatus = $CS_HL7_ConditionStatus#active "Active"
 * category = $CS_HL7_ConditionCategory#encounter-diagnosis "Encounter Diagnosis"
 * code
   * coding[0] = $SCT#73211009 "Diabetes mellitus"
@@ -31,5 +35,7 @@ Usage: #example
   * text = "Diabetes mellitus"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
 * onsetDateTime = "2022-01-01T12:30:02+07:00"
-* asserter = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
+* participant
+  * function = $CS_HL7_ProvenanceParticipantType#author "Author"
+  * actor = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
 * note.text = "หมายเหตุประกอบการวินิจฉัยโรค"

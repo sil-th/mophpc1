@@ -35,6 +35,7 @@ Alias: $VS_HL7_Priority = http://terminology.hl7.org/ValueSet/v3-ActPriority
 Alias: $VS_HL7_BwUnit = http://hl7.org/fhir/ValueSet/ucum-bodyweight
 Alias: $VS_HL7_ObsInterpret = http://hl7.org/fhir/ValueSet/observation-interpretation
 Alias: $VS_HL7_ParticipantType = http://hl7.org/fhir/ValueSet/encounter-participant-type
+Alias: $VS_HL7_ParticipantRoleType = http://hl7.org/fhir/ValueSet/participation-role-type
 Alias: $VS_HL7_AdmitSource = http://terminology.hl7.org/ValueSet/encounter-admit-source
 Alias: $VS_HL7_ClaimType = http://terminology.hl7.org/ValueSet/claim-type
 Alias: $VS_HL7_ProcessPriority = http://terminology.hl7.org/ValueSet/process-priority
@@ -45,6 +46,7 @@ Alias: $VS_HL7_DoseForm = http://terminology.hl7.org/ValueSet/v3-OrderableDrugFo
 Alias: $VS_HL7_SecurityLebel = http://hl7.org/fhir/ValueSet/security-labels
 Alias: $VS_HL7_DataAbsentReason = http://hl7.org/fhir/ValueSet/data-absent-reason
 Alias: $VS_HL7_SnomedProcedure = http://hl7.org/fhir/ValueSet/procedure-code
+
 
 // From international FHIR community
 Alias: $VS_INT_ISO3166 = http://hl7.org/fhir/ValueSet/iso3166-1-3

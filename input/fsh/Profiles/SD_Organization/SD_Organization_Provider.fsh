@@ -4,14 +4,14 @@ Id: mophpc-organization-provider
 Title: "MoPH-PC Organization: Provider"
 Description: "หน่วยบริการสุขภาพ"
 * ^url = $SD_Organization_Provider
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * identifier MS
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier contains hcode 0..1
+* identifier contains
+  hcode 0..1 and
+  depCode 0..1
 * identifier[hcode] ^short = "รหัสสถานพยาบาล 5 หลัก หรือ 9 หลัก"
 * identifier[hcode].type from $VS_TH_IdentifierType (extensible)
 * identifier[hcode].type = $CS_TH_IdentifierType#hcode
@@ -19,6 +19,11 @@ Description: "หน่วยบริการสุขภาพ"
 * identifier[hcode].system = $ID_Hcode (exactly)
 * identifier[hcode].value 1..
 * identifier[hcode].value obeys hcode-length
+* identifier[depCode] ^short = "รหัสประจำแผนก ของหน่วยบริการ"
+* identifier[depCode].type from $VS_TH_IdentifierType (extensible)
+* identifier[depCode].type = $CS_TH_IdentifierType#localDep
+* identifier[depCode].system 1..
+* identifier[depCode].value 1..
 * name MS
 * name ^short = "ชื่อสถานพยาบาล"
 * partOf only Reference($SD_Organization_Provider)

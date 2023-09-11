@@ -4,9 +4,7 @@ Id: mophpc-medication-base
 Title: "MoPH-PC Medication"
 Description: "รายละเอียดยา"
 * ^url = $SD_Medication_Base
-* ^status = #draft
-* ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
-* ^jurisdiction = urn:iso:std:iso:3166#TH
+* ^status = #active
 * extension contains
     $EX_TH_MedicationImageUrl named imageUrl 0..* MS
 * code 1.. MS
@@ -24,20 +22,20 @@ Description: "รายละเอียดยา"
 * code.coding[local].system 1..
 * code.coding[local].system = $CS_TH_LocalDrugCode (exactly)
 * code.coding[local].code 1..
-* form MS
-* form.coding ^slicing.discriminator.type = #value
-* form.coding ^slicing.discriminator.path = "system"
-* form.coding ^slicing.rules = #open
-* form.coding contains
+* doseForm MS
+* doseForm.coding ^slicing.discriminator.type = #value
+* doseForm.coding ^slicing.discriminator.path = "system"
+* doseForm.coding ^slicing.rules = #open
+* doseForm.coding contains
     snomed 0..1 and
     edqm 0..1
-* form.coding[snomed] from $VS_SNOMEDCT_FormCodes (extensible)
-* form.coding[snomed].system 1..
-* form.coding[snomed].system = $SCT (exactly)
-* form.coding[snomed].code 1..
-* form.coding[edqm] from $VS_IPS_MedicineDoseform (extensible)
-* form.coding[edqm].system 1..
-* form.coding[edqm].system = $EDQM (exactly)
-* form.coding[edqm].code 1..
-* amount 1.. MS
+* doseForm.coding[snomed] from $VS_SNOMEDCT_FormCodes (extensible)
+* doseForm.coding[snomed].system 1..
+* doseForm.coding[snomed].system = $SCT (exactly)
+* doseForm.coding[snomed].code 1..
+* doseForm.coding[edqm] from $VS_IPS_MedicineDoseform (extensible)
+* doseForm.coding[edqm].system 1..
+* doseForm.coding[edqm].system = $EDQM (exactly)
+* doseForm.coding[edqm].code 1..
+* totalVolume 1.. MS
 

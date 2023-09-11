@@ -14,13 +14,11 @@ Usage: #example
   * coding[+] = $CS_TH_LocalProcedureCode#XXX "Local code"
   * text = "Wound care"
 * subject = Reference(Patient/patient-patient4) "นาง สมควร ใจดี"
-* performedPeriod
+* occurrencePeriod
   * start = "2022-01-01T12:30:02+07:00"
   * end = "2022-01-01T12:40:02+07:00"
 * performer[0]
   * actor = Reference(Practitioner/practitioner-doctor1) "พญ. สมหญิง จริงใจ"
-  * onBehalfOf = Reference(Organization/organization-main)
-    * insert GeneralReference($ID_Hcode, "XXXXX", "โรงพยาบาลตัวอย่าง")
 * location
   * display = "OPD GP Clinic 1 โรงพยาบาลตัวอย่าง"
 * outcome
