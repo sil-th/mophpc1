@@ -1,4 +1,5 @@
 Alias: $SD_AllergyIntolerance_Base = https://fhir-ig.sil-th.org/th/mophpc1/StructureDefinition/mophpc-allergyintolerance-base
+Alias: $SD_Composition_Visit = https://fhir-ig.sil-th.org/th/mophpc1/StructureDefinition/mophpc-composition-visit
 Alias: $SD_Condition_Base = https://fhir-ig.sil-th.org/th/mophpc1/StructureDefinition/mophpc-condition-base
 Alias: $SD_DiagnosticReport_Base = https://fhir-ig.sil-th.org/th/mophpc1/StructureDefinition/mophpc-diagnosticreport-base
 Alias: $SD_Encounter_Base = https://fhir-ig.sil-th.org/th/mophpc1/StructureDefinition/mophpc-encounter-base

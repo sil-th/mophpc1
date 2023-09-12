@@ -21,17 +21,17 @@ description: An implementation guide for adopting FHIR for health information ex
 license: CC0-1.0
 fhirVersion: 5.0.0
 dependencies:
-  #  silth.fhir.terminology.core: 0.1.1
-  #  silth.fhir.th.extensions: 0.1.0
-  silth.fhir.terminology.core: dev
-  silth.fhir.th.extensions: dev
+  silth.fhir.terminology.core: 0.1.2
+  silth.fhir.th.extensions: 1.0.0
+  # silth.fhir.terminology.core: dev
+  # silth.fhir.th.extensions: dev
   hl7.fhir.uv.ips: 1.1.0
 parameters:
   show-inherited-invariants: false
   excludettl: true
   excludemap: true
 copyrightYear: 2023+
-releaseLabel: draft
+releaseLabel: trial-use
 
 pages:
   index.md:
@@ -42,6 +42,8 @@ pages:
     title: รายการ Extensions
   change_log.md:
     title: Release Notes
+  remark.md:
+    title: หมายเหตุเพิ่มเติม
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -51,7 +53,9 @@ menu:
   สารบัญ: toc.html
   เนื้อหาทั้งหมด: artifacts.html
   Profiles: profiles.html
-  Release Notes: change_log.html
+  อื่น ๆ:
+    Release Notes: change_log.html
+    หมายเหตุเพิ่มเติม: remark.html
   # Extensions: extensions.html
   # 43 แฟ้ม plus: files-listing.html
   # Other Resources:
