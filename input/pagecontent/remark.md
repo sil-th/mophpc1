@@ -4,7 +4,7 @@
 
 resource metadata นี้มี data type เป็น Uniform Resource Identifier (URI) ดังรายละเอียดในหน้า [uri](https://www.hl7.org/fhir/datatypes.html#uri) ซึ่งสามารถใส่ URI ได้หลายชนิด
 
-สำหรับแนวทางการกำหนด URI ของโครงการ HealthLink สามารถดูได้ที่หน้า [ใส่ลิงค์ตรงนี้]
+สำหรับแนวทางการกำหนด URI ของโครงการ HealthLink สามารถดูได้ที่หน้า [https://www.healthlink.go.th/fhir/healthlink/remark.html](https://www.healthlink.go.th/fhir/healthlink/remark.html)
 
 ### การใส่ผลการตรวจอื่น ๆ
 

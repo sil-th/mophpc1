@@ -101,12 +101,5 @@ table.grid colgroup col {
 
 .hierarchy {
   font-size: 14px;
-}
-
-#tbl-diff-inner table td,
-#tbl-key-inner table td,
-#tbl-snap-inner table td,
-#all-tbl-diff-inner table td {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
+  line-height: 1.5em;
 }

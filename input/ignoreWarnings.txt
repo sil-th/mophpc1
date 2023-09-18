@@ -5,8 +5,8 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # seems to be bug
-Rule eld-24: 'pattern[x] should be used rather than fixed[x]' Failed (Best Practice Recommendation)
 Reference to draft item http://hl7.org/fhir/standards-status|1.0.0
+Rule eld-24: 'pattern[x] should be used rather than fixed[x]' Failed (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 
 
 # misc

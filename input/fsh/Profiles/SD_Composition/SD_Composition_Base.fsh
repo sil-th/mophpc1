@@ -42,7 +42,7 @@ Description: "การรวมข้อมูลที่เกี่ยวข
 // * event ^slicing.discriminator.type = #pattern
 // * event ^slicing.discriminator.path = "code"
 // * event ^slicing.rules = #open
-// * event 1..
+* event 1..
 // * event contains
 //     visit 1..
 // * event[visit].code from $encounterClassVS (required) //discriminator
@@ -56,26 +56,31 @@ Description: "การรวมข้อมูลที่เกี่ยวข
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section contains
-    allergy 0..1 and
-    medication 0..1 and
-    immunization 0..1 and
-    encounterDiagnosis 0..1 and
-    problemListItem 0..1 and
-    procedure 0..1 and
-    vitalSigns 0..1 and
-    diagnosticReport 0..1 and
-    laboratory 0..1 and
-    documentReference 0..1
+    sectionAllergies 0..1 and
+    sectionMedications 0..1 and
+    sectionImmunizations 0..1 and
+    sectionProblemList 0..1 and
+    sectionPastIllness 0..1 and
+    sectionProcedures 0..1 and
+    sectionVitalSigns 0..1 and
+    sectionDiagnosticTest 0..1 and
+    sectionLaboratory 0..1 and
+    sectionDocumentReference 0..1
     // specimen 0..1
-* section[allergy]
+* section[sectionAllergies]
   * ^short = "ประวัติแพ้ยาแพ้อาหาร"
   * title MS
   * title = "Allergy Intolerance"
   * code 1.. MS
   * code = $LNC#48765-2 "Allergies and adverse reactions Document"
   * entry 1.. MS
-  * entry only Reference($SD_AllergyIntolerance_Base)
-* section[medication]
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      allergyIntolerance 0..* MS
+  * entry[allergyIntolerance] only Reference($SD_AllergyIntolerance_Base)
+* section[sectionMedications]
   * ^short = "สรุปรายการยาที่ได้รับในการรับบริการครั้งนั้น"
   * title MS
   * title = "Medication Summary"
@@ -96,47 +101,72 @@ Description: "การรวมข้อมูลที่เกี่ยวข
   * entry[medicationDispense] only Reference($SD_MedicationDispense_Base)
   * entry[medicationAdministration] only Reference($SD_MedicationAdministration_Base)
   * entry[medicationStatement] only Reference($SD_MedicationStatement_Base)
-* section[immunization]
+* section[sectionImmunizations]
   * ^short = "ประวัติการรับวัคซีน"
   * title MS
   * title = "Immunization"
   * code 1.. MS
   * code = $LNC#11369-6 "History of Immunization Narrative"
   * entry 1.. MS
-  * entry only Reference(Immunization)
-* section[encounterDiagnosis]
-  * ^short = "คำวินิจฉัยในการรับบริการครั้งนั้น"
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      immunization 0..* MS
+  * entry[immunization] only Reference(Immunization)
+* section[sectionProblemList]
+  * ^short = "สรุปรายการปัญหาของผู้รับบริการ"
   * title MS
-  * title = "Encounter Diagnosis"
+  * title = "Problem list"
   * code 1.. MS
-  * code = $LNC#29548-5 "Diagnosis Narrative"
+  * code = $LNC#11450-4 "Problem list - Reported"
   * entry 1.. MS
-  * entry only Reference($SD_Condition_Base)
-* section[problemListItem]
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      problemList 0..* MS
+  * entry[problemList] only Reference($SD_Condition_Base)
+* section[sectionPastIllness]
   * ^short = "ประวัติการเจ็บป่วยในอดีต"
   * title MS
   * title = "History of Past Illness"
   * code 1.. MS
   * code = $LNC#11348-0 "History of Past illness Narrative"
   * entry 1.. MS
-  * entry only Reference($SD_Condition_Base)
-* section[procedure]
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      pastIllness 0..* MS
+  * entry[pastIllness] only Reference($SD_Condition_Base)
+* section[sectionProcedures]
   * ^short = "ประวัติการผ่าตัด"
   * title MS
   * title = "Procedure"
   * code 1.. MS
   * code = $LNC#47519-4 "History of Procedures Document"
   * entry 1.. MS
-  * entry only Reference($SD_Procedure_Base)
-* section[vitalSigns]
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      procedure 0..* MS
+  * entry[procedure] only Reference($SD_Procedure_Base)
+* section[sectionVitalSigns]
   * ^short = "ผลการวัดสัญญาณชีพ"
   * title MS
   * title = "Vital Signs"
   * code 1.. MS
   * code = $LNC#8716-3 "Vital signs"
   * entry 1.. MS
-  * entry only Reference($SD_Observation_VitalBase)
-* section[diagnosticReport]
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      vitalSigns 0..* MS
+  * entry[vitalSigns] only Reference($SD_Observation_VitalBase)
+* section[sectionDiagnosticTest]
   * ^short = "ผลการตรวจทางคลินิกอื่น ๆ เช่น EKG"
   * title MS
   * title = "Diagnostic Studies Result"
@@ -145,13 +175,15 @@ Description: "การรวมข้อมูลที่เกี่ยวข
   * entry 1.. MS
     * ^slicing.discriminator[0].type = #type
     * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.discriminator[+].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
     * ^slicing.rules = #open
   * entry contains
       results-observation 0..* MS and
       results-diagnosticReport 0..* MS
   * entry[results-observation] only Reference(Observation)
   * entry[results-diagnosticReport] only Reference($SD_DiagnosticReport_Base)
-* section[laboratory]
+* section[sectionLaboratory]
   * ^short = "ผลการตรวจทางห้องปฏิบัติการ"
   * title MS
   * title = "Laboratory Test Result"
@@ -168,14 +200,19 @@ Description: "การรวมข้อมูลที่เกี่ยวข
       results-diagnosticReport 0..* MS
   * entry[results-observation] only Reference($SD_Observation_LabBase)
   * entry[results-diagnosticReport] only Reference($SD_DiagnosticReport_Base)
-* section[documentReference]
-  * ^short = "ภาพสแกนเอกสาร"
+* section[sectionDocumentReference]
+  * ^short = "ภาพสแกนเอกสารหรือภาพถ่ายทางการแพทย์"
   * title MS
-  * title = "Scanned medical records"
+  * title = "Scanned medical records or medical images"
   * code 1.. MS
   * code = $SCT#423876004 "Clinical document"
   * entry 1.. MS
-  * entry only Reference(DocumentReference)
+    * ^slicing.discriminator[0].type = #profile
+    * ^slicing.discriminator[=].path = "resolve()"
+    * ^slicing.rules = #open
+  * entry contains
+      documentReference 0..* MS
+  * entry[documentReference] only Reference(DocumentReference)
 // * section[specimen]
 //   * ^short = ""
 //   * title MS
